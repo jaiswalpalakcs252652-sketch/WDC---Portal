@@ -1,0 +1,45 @@
+/* style.css - All your custom styles go here */
+
+/* Example styles for your WDC Portal */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar styles */
+.navbar-brand {
+    font-weight: bold;
+    color: #6a11cb !important;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 80px 0;
+    color: white;
+}
+
+/* Card hover effects */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #6a11cb;
+    border-color: #6a11cb;
+}
+.btn-primary:hover {
+    background-color: #5a0db0;
+    border-color: #5a0db0;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 20px 0;
+}
