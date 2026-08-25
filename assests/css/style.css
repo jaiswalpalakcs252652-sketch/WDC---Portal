@@ -59,3 +59,10 @@ footer {
     border-color: #6a11cb;
     box-shadow: 0 0 0 0.25rem rgba(106, 17, 203, 0.25);
 }
+
+.logo {
+    width: 40px; /* Adjust to fit your navbar height */
+    height: auto;
+    border-radius: 5px; /* Slight rounding */
+    margin-right: 10px; /* Space between logo and text */
+}
