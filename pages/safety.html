@@ -6,157 +6,331 @@
     <title>Safety - WDC Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* ===== COLOR VARIABLES (Matching Home Page) ===== */
+        /* ===== APPROVED COLOR THEME ===== */
         :root {
-            --primary: #6A1B9A;
-            --primary-dark: #4A148C;
+            --primary: #7B1FA2;
             --primary-light: #9C27B0;
-            --primary-bg: #E1BEE7;
-            --secondary: #E91E63;
-            --secondary-light: #F48FB1;
-            --dark: #1A237E;
-            --light-bg: #F5F5F5;
+            --primary-bg: #F3E5F5;
+            --secondary: #1976D2;
+            --secondary-light: #64B5F6;
             --white: #FFFFFF;
-            --success: #4CAF50;
-            --shadow: 0 4px 15px rgba(106, 27, 154, 0.15);
-            --radius: 12px;
+            --light-bg: #F5F7FA;
+            --shadow: 0 4px 20px rgba(123, 31, 162, 0.08);
+            --shadow-hover: 0 8px 30px rgba(123, 31, 162, 0.16);
+            --radius: 16px;
         }
 
-        /* ===== PAGE HEADER (Hero) ===== */
-        .page-header {
-            background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 50%, #E91E63 100%);
-            color: white;
-            padding: 60px 0;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: #333;
         }
+
+        /* ===== HERO WITH CIRCLES ONLY ===== */
+        .page-header {
+            background: linear-gradient(135deg, #7B1FA2 0%, #1976D2 60%, #9C27B0 100%);
+            color: white;
+            padding: 65px 0 55px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+        }
+        .page-header .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -80px;
+            right: -50px;
+        }
+        .page-header .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -60px;
+            left: 20%;
+        }
+        .page-header .circle-3 {
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 5%;
+            border-color: rgba(255, 255, 255, 0.03);
+        }
+
         .page-header h1 {
             font-weight: 700;
-            font-size: 4rem;  /* ← Increased heading size */
+            font-size: 2.8rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
+        .page-header h1 i { margin-right: 14px; }
         .page-header .lead {
-            opacity: 0.95;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
         }
 
-        /* ===== SECTION HEADERS ===== */
-        .section-title {
-            color: var(--primary);
-            font-weight: 700;
+        .section-bg { background: var(--light-bg); padding: 50px 0; }
+
+        /* ===== TABS ===== */
+        .nav-tabs {
+            border: none;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 6px;
+            box-shadow: var(--shadow);
             margin-bottom: 25px;
+            border-top: 4px solid #7B1FA2;  /* ← PURPLE LINE AT TOP */
         }
-        .section-title i {
-            color: var(--secondary);
-        }
-
-        /* ===== HELPLINE CARDS ===== */
-        .helpline-card {
+        .nav-tabs .nav-link {
             border: none;
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            padding: 12px 30px;
+            font-weight: 600;
+            color: #888;
             transition: all 0.3s ease;
-            margin-bottom: 15px;
+            position: relative;
+            margin: 0 4px;  /* ← SPACING BETWEEN TABS */
         }
-        .helpline-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.25);
+        .nav-tabs .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #7B1FA2;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            opacity: 0;
         }
-        .helpline-card .list-group-item {
-            border-left: 3px solid var(--secondary);
-            margin-bottom: 2px;
-            border-radius: 4px;
+        .nav-tabs .nav-link:hover::after {
+            width: 50%;
+            opacity: 1;
         }
-        .helpline-card .list-group-item strong {
-            color: var(--primary);
+        .nav-tabs .nav-link:hover {
+            color: #7B1FA2;
+            background: #F3E5F5;
         }
-        .helpline-card .card-title {
-            color: var(--primary);
-            font-weight: 700;
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(135deg, #7B1FA2, #1976D2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(123, 31, 162, 0.3);
         }
+        .nav-tabs .nav-link.active::after {
+            display: none;
+        }
+        .nav-tabs .nav-link i { margin-right: 8px; }
 
-        /* ===== SAFETY TIPS CARD ===== */
-        .tip-card .card-title {
-            color: var(--success) !important;
-            font-weight: 700;
-        }
-        .tip-card .list-group-item {
-            border-left: 3px solid var(--success);
-            margin-bottom: 2px;
-            border-radius: 4px;
-        }
-
-        /* ===== LEGAL RIGHTS CARD ===== */
-        .legal-card {
-            border: 2px solid var(--primary);
+        /* ===== TAB CONTENT ===== */
+        .tab-content {
+            background: var(--white);
             border-radius: var(--radius);
-            background: var(--primary-bg);
-        }
-        .legal-card .card-title {
-            color: var(--primary);
-            font-weight: 700;
-        }
-        .legal-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .legal-card ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(106, 27, 154, 0.1);
-        }
-        .legal-card ul li:last-child {
-            border-bottom: none;
-        }
-        .legal-card ul li i {
-            color: var(--success);
-            margin-right: 10px;
+            padding: 28px 32px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid #7B1FA2;  /* ← PURPLE LINE AT TOP */
         }
 
-        /* ===== BUTTONS ===== */
-        .btn-primary-custom {
-            background: var(--primary);
+        /* ===== HELPLINE ITEMS ===== */
+        .helpline-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            margin-bottom: 6px;
+            border-radius: var(--radius);
+            background: #FAF8FF;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .helpline-item:hover {
+            background: #F3E5F5;
+            border-left-color: #7B1FA2;
+            transform: translateX(4px);
+        }
+        .helpline-item .info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .helpline-item .info .icon-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #7B1FA2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+        .helpline-item .info .icon-circle.pink { background: #E91E63; }
+        .helpline-item .info .icon-circle.teal { background: #00897B; }
+        .helpline-item .info .icon-circle.blue { background: #1976D2; }
+        .helpline-item .info .icon-circle.gold { background: #FFB300; }
+        .helpline-item .info .icon-circle.purple { background: #7B1FA2; }
+
+        .helpline-item .info .name { font-size: 0.95rem; color: #444; }
+        .helpline-item .info .name strong { color: #1A237E; }
+
+        .helpline-item .number {
+            font-weight: 700;
+            color: #7B1FA2;
+            font-size: 1rem;
+            margin-right: 4px;
+        }
+
+        .helpline-item .call-btn {
+            background: #7B1FA2;
             color: white;
             border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
+            padding: 6px 24px;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 600;
             transition: all 0.3s ease;
+            margin-left: 16px;
+            letter-spacing: 0.5px;
+        }
+        .helpline-item .call-btn:hover {
+            background: #1976D2;
+            transform: scale(1.05);
+        }
+
+        /* ===== TIP ITEMS ===== */
+        .tip-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 18px;
+            margin-bottom: 6px;
+            border-radius: var(--radius);
+            background: #FAF8FF;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .tip-item:hover {
+            background: #E0F2F1;
+            border-left-color: #00897B;
+            transform: translateX(4px);
+        }
+        .tip-item .check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #00897B;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .tip-item .text { font-size: 0.95rem; color: #444; }
+
+        /* ===== LEGAL CARD ===== */
+        .legal-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid #7B1FA2;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .legal-card::after {
+            content: '⚖️';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.04;
+        }
+        .legal-card h4 { color: #1A237E; font-weight: 600; font-size: 1.2rem; }
+        .legal-card h4 i { color: #7B1FA2; margin-right: 12px; }
+        .legal-card p { color: #666; font-size: 0.95rem; margin-top: 10px; }
+        .legal-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+        .legal-card ul li {
+            padding: 9px 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+            color: #444;
+            border-bottom: 1px solid #F8F6FF;
+        }
+        .legal-card ul li:last-child { border-bottom: none; }
+        .legal-card ul li .check-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1976D2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #7B1FA2, #1976D2);
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 31, 162, 0.2);
         }
         .btn-primary-custom:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(123, 31, 162, 0.3);
             color: white;
         }
 
-        /* ===== FOOTER (Compact) ===== */
         .footer-custom {
-            background: var(--dark);
+            background: linear-gradient(135deg, #1A237E, #1976D2);
             color: white;
-            padding: 15px 0;
+            padding: 18px 0;
         }
-        .footer-custom small {
-            color: rgba(255,255,255,0.6);
-        }
+        .footer-custom p { font-size: 0.9rem; margin: 0; }
+        .footer-custom small { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .page-header {
-                padding: 40px 0;
-            }
-            .page-header h1 {
-                font-size: 2.5rem;  /* Smaller on mobile */
-            }
-            .page-header .lead {
-                font-size: 1rem;
-            }
+            .page-header { padding: 40px 0 35px; }
+            .page-header h1 { font-size: 2rem; }
+            .page-header .lead { font-size: 0.95rem; }
+            .page-header .circle-3 { display: none; }
+            .nav-tabs .nav-link { padding: 10px 16px; font-size: 0.85rem; margin: 0 2px; }
+            .nav-tabs .nav-link::after { display: none; }
+            .tab-content { padding: 20px; }
+            .legal-card { padding: 20px; }
+            .helpline-item { flex-wrap: wrap; gap: 8px; padding: 12px 14px; }
+            .helpline-item .call-btn { padding: 5px 18px; font-size: 0.7rem; margin-left: 10px; }
+            .tip-item { padding: 12px 14px; }
         }
     </style>
 </head>
 <body>
 
-<!-- ================================ -->
-<!-- NAVBAR (Matches Home Page) -->
-<!-- ================================ -->
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="../index.html">
@@ -180,96 +354,160 @@
     </div>
 </nav>
 
-<!-- ================================ -->
-<!-- PAGE HEADER (Hero - Updated Colors + Larger Heading) -->
-<!-- ================================ -->
+<!-- ===== HERO ===== -->
 <section class="page-header text-center">
-    <div class="container">
-        <h1><i class="fas fa-shield-alt me-3"></i>Women's Safety</h1>
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+
+    <div class="container position-relative" style="z-index: 2;">
+        <h1><i class="fas fa-shield-alt"></i>Women's Safety</h1>
         <p class="lead">Your safety is our priority. Know your rights and resources.</p>
     </div>
 </section>
 
-<!-- ================================ -->
-<!-- SAFETY CONTENT (Layout Preserved) -->
-<!-- ================================ -->
-<section class="py-5">
+<!-- ===== CONTENT ===== -->
+<section class="section-bg">
     <div class="container">
-        <div class="row">
-            <!-- Emergency Helplines -->
-            <div class="col-md-6 mb-4">
-                <div class="card helpline-card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title section-title">
-                            <i class="fas fa-phone-alt me-2"></i>Emergency Helplines
-                        </h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Women's Helpline:</strong> 1091</li>
-                            <li class="list-group-item"><strong>Police Emergency:</strong> 100</li>
-                            <li class="list-group-item"><strong>Ambulance:</strong> 102</li>
-                            <li class="list-group-item"><strong>College Security:</strong> 1800-123-4567</li>
-                            <li class="list-group-item"><strong>Counseling Support:</strong> 1800-987-6543</li>
-                        </ul>
+
+        <!-- Tabs with Purple Line at Top -->
+        <ul class="nav nav-tabs justify-content-center" id="safetyTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="helpline-tab" data-bs-toggle="tab" data-bs-target="#helpline" type="button" role="tab">
+                    <i class="fas fa-phone-alt"></i> Helplines
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tips-tab" data-bs-toggle="tab" data-bs-target="#tips" type="button" role="tab">
+                    <i class="fas fa-lightbulb"></i> Safety Tips
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="legal-tab" data-bs-toggle="tab" data-bs-target="#legal" type="button" role="tab">
+                    <i class="fas fa-gavel"></i> Legal Rights
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content with Purple Line at Top -->
+        <div class="tab-content" id="safetyTabContent">
+            <!-- Helplines -->
+            <div class="tab-pane fade show active" id="helpline" role="tabpanel">
+                <div class="helpline-item">
+                    <div class="info">
+                        <div class="icon-circle pink"><i class="fas fa-female"></i></div>
+                        <span class="name"><strong>Women's Helpline</strong></span>
+                    </div>
+                    <div>
+                        <span class="number">1091</span>
+                        <button class="call-btn">Call</button>
+                    </div>
+                </div>
+                <div class="helpline-item">
+                    <div class="info">
+                        <div class="icon-circle blue"><i class="fas fa-shield-alt"></i></div>
+                        <span class="name"><strong>Police Emergency</strong></span>
+                    </div>
+                    <div>
+                        <span class="number">100</span>
+                        <button class="call-btn">Call</button>
+                    </div>
+                </div>
+                <div class="helpline-item">
+                    <div class="info">
+                        <div class="icon-circle teal"><i class="fas fa-ambulance"></i></div>
+                        <span class="name"><strong>Ambulance</strong></span>
+                    </div>
+                    <div>
+                        <span class="number">102</span>
+                        <button class="call-btn">Call</button>
+                    </div>
+                </div>
+                <div class="helpline-item">
+                    <div class="info">
+                        <div class="icon-circle gold"><i class="fas fa-building"></i></div>
+                        <span class="name"><strong>College Security</strong></span>
+                    </div>
+                    <div>
+                        <span class="number">1800-123-4567</span>
+                        <button class="call-btn">Call</button>
+                    </div>
+                </div>
+                <div class="helpline-item">
+                    <div class="info">
+                        <div class="icon-circle purple"><i class="fas fa-hand-holding-heart"></i></div>
+                        <span class="name"><strong>Counseling Support</strong></span>
+                    </div>
+                    <div>
+                        <span class="number">1800-987-6543</span>
+                        <button class="call-btn">Call</button>
                     </div>
                 </div>
             </div>
 
             <!-- Safety Tips -->
-            <div class="col-md-6 mb-4">
-                <div class="card tip-card helpline-card h-100">
-                    <div class="card-body">
-                        <h4 class="card-title section-title" style="color: #4CAF50 !important;">
-                            <i class="fas fa-lightbulb me-2" style="color: #FFC107;"></i>Safety Tips
-                        </h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">✅ Always share your location with friends/family</li>
-                            <li class="list-group-item">✅ Save emergency contacts on speed dial</li>
-                            <li class="list-group-item">✅ Avoid isolated areas after dark</li>
-                            <li class="list-group-item">✅ Use college transport services when available</li>
-                            <li class="list-group-item">✅ Report any suspicious activity immediately</li>
-                        </ul>
-                    </div>
+            <div class="tab-pane fade" id="tips" role="tabpanel">
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Share your location with friends &amp; family</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Keep emergency contacts on speed dial</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Avoid isolated areas after dark</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Use college transport services when available</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Report suspicious activity immediately</span>
+                </div>
+            </div>
+
+            <!-- Legal Rights -->
+            <div class="tab-pane fade" id="legal" role="tabpanel">
+                <p style="color: #666; font-size: 0.95rem;">Your college has a <strong>zero-tolerance policy</strong> against harassment. You have the right to:</p>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Report harassment without fear of retaliation</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Confidential counseling and support services</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Fair investigation of complaints</span>
+                </div>
+                <div class="tip-item">
+                    <span class="check"><i class="fas fa-check"></i></span>
+                    <span class="text">Access to legal aid and representation</span>
+                </div>
+                <div class="mt-3">
+                    <a href="grievance.html" class="btn btn-primary-custom">
+                        <i class="fas fa-file-alt me-2"></i>File a Grievance
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Legal Rights -->
-        <div class="card legal-card mt-4">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <i class="fas fa-gavel me-2"></i>Legal Rights & Policies
-                </h4>
-                <p>Your college has a <strong>zero-tolerance policy</strong> against harassment. You have the right to:</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Report harassment without fear of retaliation</li>
-                    <li><i class="fas fa-check-circle"></i> Confidential counseling and support services</li>
-                    <li><i class="fas fa-check-circle"></i> Fair investigation of complaints</li>
-                    <li><i class="fas fa-check-circle"></i> Access to legal aid and representation</li>
-                </ul>
-                <a href="grievance.html" class="btn btn-primary-custom mt-2">
-                    <i class="fas fa-file-alt me-2"></i>File a Grievance
-                </a>
-            </div>
-        </div>
     </div>
 </section>
 
-<!-- ================================ -->
-<!-- FOOTER (Compact) -->
-<!-- ================================ -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer-custom text-center">
-    <div class="container py-2">
-        <p class="mb-0" style="font-size: 0.9rem;">&copy; 2026 Women's Development Committee. All rights reserved.</p>
-        <small style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">💜 Empowering Women, Building Futures</small>
+    <div class="container">
+        <p>&copy; 2026 Women's Development Committee. All rights reserved.</p>
+        <small>💜 Empowering Women, Building Futures</small>
     </div>
 </footer>
 
-<!-- ================================ -->
-<!-- SCRIPTS -->
-<!-- ================================ -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
 </script>
-<script src="../assets/js/script.js"></script>
-
 </body>
 </html>
