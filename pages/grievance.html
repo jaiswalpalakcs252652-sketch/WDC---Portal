@@ -6,16 +6,208 @@
     <title>Grievance - WDC Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* ===== PURPLE THEME (Same as Safety) ===== */
+        :root {
+            --primary: #7B1FA2;
+            --primary-light: #9C27B0;
+            --primary-bg: #F3E5F5;
+            --secondary: #1976D2;
+            --secondary-light: #64B5F6;
+            --white: #FFFFFF;
+            --light-bg: #F5F7FA;
+            --shadow: 0 4px 20px rgba(123, 31, 162, 0.08);
+            --shadow-hover: 0 8px 30px rgba(123, 31, 162, 0.16);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light-bg);
+            color: #333;
+        }
+
+        /* ===== HERO WITH CIRCLES ===== */
+        .page-header {
+            background: linear-gradient(135deg, #7B1FA2 0%, #1976D2 60%, #9C27B0 100%);
+            color: white;
+            padding: 55px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+        }
+        .page-header .circle-1 {
+            width: 250px;
+            height: 250px;
+            top: -60px;
+            right: -30px;
+        }
+        .page-header .circle-2 {
+            width: 150px;
+            height: 150px;
+            bottom: -40px;
+            left: 15%;
+        }
+        .page-header .circle-3 {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            left: 5%;
+            border-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .page-header h1 {
+            font-weight: 700;
+            font-size: 2.6rem;
+            position: relative;
+            z-index: 1;
+        }
+        .page-header h1 i { margin-right: 14px; }
+        .page-header .lead {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-bg { background: var(--light-bg); padding: 50px 0; }
+
+        /* ===== FORM CARD ===== */
+        .form-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 35px 40px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid #7B1FA2;
+        }
+        .form-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+        .form-card .card-title {
+            color: #4A148C;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+        .form-card .card-title i {
+            color: #7B1FA2;
+            margin-right: 10px;
+        }
+
+        /* ===== FORM STYLES ===== */
+        .form-label {
+            color: #1A237E;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .form-label .optional {
+            color: #999;
+            font-weight: 400;
+            font-size: 0.75rem;
+            background: #F5F5F5;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-left: 6px;
+        }
+        .form-label .required {
+            color: #D32F2F;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-left: 2px;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #F3E5F5;
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            transition: all 0.3s ease;
+            background: #FAF8FF;
+            font-size: 0.95rem;
+            color: #333;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #7B1FA2;
+            box-shadow: 0 0 0 0.25rem rgba(123, 31, 162, 0.15);
+            background: var(--white);
+        }
+        .form-control::placeholder {
+            color: #BDBDBD;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SUBMIT BUTTON ===== */
+        .btn-submit {
+            background: linear-gradient(135deg, #7B1FA2, #1976D2);
+            color: white;
+            border: none;
+            padding: 14px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(123, 31, 162, 0.3);
+            letter-spacing: 0.5px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(123, 31, 162, 0.4);
+            color: white;
+        }
+        .btn-submit i { margin-right: 10px; }
+
+        /* ===== ANONYMOUS BADGE ===== */
+        .anonymous-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #F3E5F5;
+            color: #4A148C;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(123, 31, 162, 0.15);
+        }
+        .anonymous-badge i { color: #7B1FA2; }
+
+        /* ===== FOOTER ===== */
+        .footer-custom {
+            background: linear-gradient(135deg, #1A237E, #1976D2);
+            color: white;
+            padding: 18px 0;
+        }
+        .footer-custom p { font-size: 0.9rem; margin: 0; }
+        .footer-custom small { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-header { padding: 35px 0; }
+            .page-header h1 { font-size: 2rem; }
+            .page-header .lead { font-size: 0.95rem; }
+            .page-header .circle-3 { display: none; }
+            .form-card { padding: 20px; }
+            .btn-submit { padding: 12px 30px; font-size: 0.95rem; width: 100%; }
+            .form-control, .form-select { padding: 10px 14px; font-size: 0.9rem; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="../index.html">
-            <!-- Update this to .jpg if your image is still logo.jpg -->
-            <img src="../assets/images/logo.jpg" alt="Logo" height="35" class="me-2">
+            <img src="../assets/images/logo.png" alt="Logo" height="35" class="me-2">
             WDC Portal
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -35,118 +227,95 @@
     </div>
 </nav>
 
-<!-- Page Header -->
-<section class="py-5 bg-warning text-dark text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold"><i class="fas fa-file-alt me-3"></i>Grievance Support</h1>
+<!-- ===== HERO ===== -->
+<section class="page-header text-center">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+
+    <div class="container position-relative" style="z-index: 2;">
+        <h1><i class="fas fa-file-alt"></i>Grievance Support</h1>
         <p class="lead">Submit your complaints anonymously or with your identity. We're here to help.</p>
     </div>
 </section>
 
-<!-- ========================================== -->
-<!-- NEW COMPLAINT FORM & SCRIPT (PASTE THIS) -->
-<!-- ========================================== -->
-<section class="py-5">
+<!-- ===== GRIEVANCE FORM ===== -->
+<section class="section-bg">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow-lg">
-                    <div class="card-body p-5">
-                        <h3 class="card-title text-center mb-4">Submit a Complaint</h3>
-                        
-                        <!-- Updated Form without onsubmit, using an ID -->
-                        <form id="grievanceForm">
-                            <div class="mb-3">
-                                <label class="form-label">Your Name (Optional)</label>
-                                <input type="text" id="name" class="form-control" placeholder="Leave blank for anonymous">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email (Optional)</label>
-                                <input type="email" id="email" class="form-control" placeholder="Your email (optional)">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Category <span class="text-danger">*</span></label>
-                                <select id="category" class="form-select" required>
-                                    <option value="">Select Category</option>
-                                    <option>Harassment</option>
-                                    <option>Discrimination</option>
-                                    <option>Safety Concern</option>
-                                    <option>Academic Issue</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Complaint Description <span class="text-danger">*</span></label>
-                                <textarea id="description" class="form-control" rows="5" required placeholder="Describe your complaint in detail..."></textarea>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="anonymous">
-                                <label class="form-check-label" for="anonymous">Submit Anonymously</label>
-                            </div>
-                            <!-- CHANGE THIS TO YOUR ADMIN EMAIL -->
-                            <input type="hidden" id="adminEmail" value="admin@wdportal.com"> 
-                            
-                            <button type="button" onclick="sendComplaint()" class="btn btn-warning w-100 py-2 fw-bold">
-                                <i class="fas fa-paper-plane me-2"></i>Submit Complaint
-                            </button>
-                        </form>
-                        <div class="mt-3 text-center">
-                            <small class="text-muted">Your complaint will be treated with confidentiality and respect.</small>
+
+                <!-- Form Card -->
+                <div class="form-card">
+
+                    <h4 class="card-title"><i class="fas fa-pen"></i>Submit a Complaint</h4>
+
+                    <form>
+
+                        <!-- Name -->
+                        <div class="mb-4">
+                            <label class="form-label">Your Name <span class="optional">Optional</span></label>
+                            <input type="text" class="form-control" placeholder="Leave blank to stay anonymous">
                         </div>
-                    </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label class="form-label">Email <span class="optional">Optional</span></label>
+                            <input type="email" class="form-control" placeholder="your@email.com (optional)">
+                        </div>
+
+                        <!-- Category -->
+                        <div class="mb-4">
+                            <label class="form-label">Category <span class="required">*</span></label>
+                            <select class="form-select">
+                                <option selected disabled>Select Category</option>
+                                <option>Academic Issue</option>
+                                <option>Harassment / Discrimination</option>
+                                <option>Infrastructure / Facilities</option>
+                                <option>Administrative Concern</option>
+                                <option>Safety &amp; Security</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-4">
+                            <label class="form-label">Complaint Description <span class="required">*</span></label>
+                            <textarea class="form-control" rows="6" placeholder="Please describe your complaint in detail..."></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane"></i>Submit Complaint
+                            </button>
+                        </div>
+
+                        <!-- Anonymous Note -->
+                        <div class="text-center mt-4">
+                            <span class="anonymous-badge">
+                                <i class="fas fa-user-secret"></i> Your privacy is our priority
+                            </span>
+                        </div>
+
+                    </form>
+
                 </div>
+
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
+<!-- ===== FOOTER ===== -->
+<footer class="footer-custom text-center">
     <div class="container">
-        <p class="mb-0">&copy; 2026 Women's Development Committee. All rights reserved.</p>
+        <p>&copy; 2026 Women's Development Committee. All rights reserved.</p>
+        <small>💜 Empowering Women, Building Futures</small>
     </div>
 </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- New Script for Sending Email -->
-<script>
-    function sendComplaint() {
-        // Get the form values
-        var name = document.getElementById('name').value || 'Anonymous';
-        var email = document.getElementById('email').value || 'Not provided';
-        var category = document.getElementById('category').value;
-        var description = document.getElementById('description').value;
-        var isAnonymous = document.getElementById('anonymous').checked;
-        var adminEmail = document.getElementById('adminEmail').value; // The admin's email
-
-        // Validation
-        if (!category || !description) {
-            alert("Please fill out the Category and Description fields.");
-            return;
-        }
-
-        // Build the Email Subject
-        var subject = "New Grievance Submitted: " + category;
-
-        // Build the Email Body
-        var body = "A new grievance has been submitted to the WDC Portal.\n\n";
-        body += "Student Name: " + name + "\n";
-        body += "Student Email: " + email + "\n";
-        body += "Anonymous: " + (isAnonymous ? "Yes" : "No") + "\n";
-        body += "Category: " + category + "\n\n";
-        body += "Complaint Description:\n" + description;
-
-        // Create the mailto link
-        window.location.href = "mailto:" + adminEmail + 
-                               "?subject=" + encodeURIComponent(subject) + 
-                               "&body=" + encodeURIComponent(body);
-        
-        // Show a success message (optional)
-        alert("Your complaint has been submitted successfully.");
-    }
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
 </script>
-
 </body>
 </html>
