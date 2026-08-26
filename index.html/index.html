@@ -7,6 +7,229 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+        /* ===== COLOR VARIABLES (Lighter Blue-Purple Theme) ===== */
+        :root {
+            --primary: #7B1FA2;
+            --primary-light: #9C27B0;
+            --primary-bg: #F3E5F5;
+            --secondary: #1976D2;
+            --secondary-light: #64B5F6;
+            --accent-pink: #E91E63;
+            --accent-pink-light: #F48FB1;
+            --white: #FFFFFF;
+            --light-bg: #F5F7FA;
+            --shadow: 0 4px 15px rgba(123, 31, 162, 0.12);
+            --shadow-hover: 0 8px 25px rgba(123, 31, 162, 0.2);
+            --radius: 12px;
+            --gray-text: #555555;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(135deg, #7B1FA2 0%, #1976D2 50%, #9C27B0 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3.5rem;
+        }
+        .hero-section .lead {
+            font-size: 1.25rem;
+            opacity: 0.95;
+        }
+        .hero-section .btn-light {
+            background: white;
+            color: #7B1FA2;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .hero-section .btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .hero-section .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .hero-section .btn-outline-light:hover {
+            background: white;
+            color: #7B1FA2;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            color: #7B1FA2;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #7B1FA2, #1976D2);
+            border-radius: 2px;
+        }
+        .section-title i {
+            color: #1976D2;
+        }
+
+        /* ===== ANNOUNCEMENT CARDS ===== */
+        .hover-card {
+            transition: all 0.3s ease;
+            border-radius: var(--radius);
+            border: none;
+            box-shadow: var(--shadow);
+        }
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .hover-card .card-title {
+            color: #7B1FA2;
+            font-weight: 600;
+        }
+        .hover-card .badge {
+            font-weight: 600;
+            padding: 5px 12px;
+        }
+        .badge.bg-danger {
+            background: #E91E63 !important;
+        }
+        .badge.bg-warning {
+            background: #FFC107 !important;
+            color: #333;
+        }
+        .badge.bg-success {
+            background: #1976D2 !important;
+        }
+
+        /* ===== IMPACT STATS ===== */
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #7B1FA2, #1976D2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+
+        /* ===== HIGHLIGHTS ===== */
+        .highlight-item {
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-bottom-color: #1976D2;
+        }
+        .highlight-item h5 {
+            color: #7B1FA2;
+            font-weight: 600;
+        }
+        .highlight-item h5 i {
+            margin-right: 10px;
+        }
+        .highlight-item .text-muted {
+            color: var(--gray-text) !important;
+        }
+
+        /* ===== SOCIAL BUTTONS ===== */
+        .social-btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        .btn-outline-primary {
+            color: #7B1FA2;
+            border-color: #7B1FA2;
+        }
+        .btn-outline-primary:hover {
+            background: #7B1FA2;
+            color: white;
+        }
+        .btn-outline-info {
+            color: #1976D2;
+            border-color: #1976D2;
+        }
+        .btn-outline-info:hover {
+            background: #1976D2;
+            color: white;
+        }
+        .btn-outline-danger {
+            color: #E91E63;
+            border-color: #E91E63;
+        }
+        .btn-outline-danger:hover {
+            background: #E91E63;
+            color: white;
+        }
+        .btn-outline-success {
+            color: #4CAF50;
+            border-color: #4CAF50;
+        }
+        .btn-outline-success:hover {
+            background: #4CAF50;
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-custom {
+            background: linear-gradient(135deg, #7B1FA2, #1976D2);
+            color: white;
+            padding: 15px 0;
+        }
+        .footer-custom small {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 50px 0;
+            }
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            .stat-number {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -39,7 +262,7 @@
 <!-- ================================ -->
 <!-- HERO SECTION -->
 <!-- ================================ -->
-<section class="hero-section text-white text-center py-5" style="background: linear-gradient(135deg, #6a11cb, #2575fc);">
+<section class="hero-section text-white text-center py-5">
     <div class="container py-5">
         <h1 class="display-3 fw-bold">✨ Women's Development Committee ✨</h1>
         <p class="lead mb-4">Empowering, Supporting, and Celebrating Women on Campus</p>
@@ -57,15 +280,17 @@
 <!-- ================================ -->
 <!-- LATEST ANNOUNCEMENTS -->
 <!-- ================================ -->
-<section class="py-5 bg-light">
+<section class="py-5" style="background: #F3E5F5;">
     <div class="container">
-        <h2 class="text-center mb-4 fw-bold"><i class="fas fa-bullhorn me-2 text-primary"></i>Latest Announcements</h2>
+        <h2 class="section-title text-center">
+            <i class="fas fa-bullhorn me-2"></i>Latest Announcements
+        </h2>
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="card h-100 shadow-sm hover-card border-0">
                     <div class="card-body">
-                        <span class="badge bg-danger mb-2"> 🆕NEW</span>
-                        <h5 class="card-title"> 📣 Welcome to WDC Portal</h5>
+                        <span class="badge bg-danger mb-2">🆕NEW</span>
+                        <h5 class="card-title">📣 Welcome to WDC Portal</h5>
                         <p class="card-text">The Women Development Committee portal is now live! Explore events, resources, and support.</p>
                         <small class="text-muted"><i class="far fa-clock me-1"></i>Posted: Aug 7, 2026</small>
                     </div>
@@ -75,7 +300,7 @@
                 <div class="card h-100 shadow-sm hover-card border-0">
                     <div class="card-body">
                         <span class="badge bg-warning mb-2">🆕NEW</span>
-                        <h5 class="card-title"> 🛡️ Grievance Cell Active</h5>
+                        <h5 class="card-title">🛡️ Grievance Cell Active</h5>
                         <p class="card-text">Submit your complaints anonymously through the portal. Your privacy is our priority.</p>
                         <small class="text-muted"><i class="far fa-clock me-1"></i>Posted: Aug 6, 2026</small>
                     </div>
@@ -84,8 +309,8 @@
             <div class="col-md-4 mb-3">
                 <div class="card h-100 shadow-sm hover-card border-0">
                     <div class="card-body">
-                        <span class="badge bg-success mb-2"> 🆕NEW</span>
-                        <h5 class="card-title"> 🥋 Self-Defense Workshop</h5>
+                        <span class="badge bg-success mb-2">🆕NEW</span>
+                        <h5 class="card-title">🥋 Self-Defense Workshop</h5>
                         <p class="card-text">Join us on Sep 15 for a free self-defense training session. Register now!</p>
                         <small class="text-muted"><i class="far fa-clock me-1"></i>Posted: Aug 5, 2026</small>
                     </div>
@@ -98,62 +323,64 @@
 <!-- ================================ -->
 <!-- OUR IMPACT -->
 <!-- ================================ -->
-<section class="py-5 bg-light">
+<section class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4 fw-bold"><i class="fas fa-chart-bar me-2"></i> 📊 Our Impact</h2>
-        <div class="row text-center ">
+        <h2 class="section-title text-center">
+            <i class="fas fa-chart-bar me-2"></i> 📊 Our Impact
+        </h2>
+        <div class="row text-center">
             <div class="col-md-3 col-6 mb-3">
-                <div class="display-1 fw-bold">50+</div>
-                <p class="lead">Events Organized</p>
+                <div class="stat-number">50+</div>
+                <p class="stat-label">Events Organized</p>
             </div>
             <div class="col-md-3 col-6 mb-3">
-                <div class="display-1 fw-bold">200+</div>
-                <p class="lead">Students Reached</p>
+                <div class="stat-number">200+</div>
+                <p class="stat-label">Students Reached</p>
             </div>
             <div class="col-md-3 col-6 mb-3">
-                <div class="display-1 fw-bold">98%</div>
-                <p class="lead">Issues Resolved</p>
+                <div class="stat-number">98%</div>
+                <p class="stat-label">Issues Resolved</p>
             </div>
             <div class="col-md-3 col-6 mb-3">
-                <div class="display-1 fw-bold">24/7</div>
-                <p class="lead">Safety Support</p>
+                <div class="stat-number">24/7</div>
+                <p class="stat-label">Safety Support</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ================================ -->
-<!-- WDC HIGHLIGHTS (LIST STYLE) -->
+<!-- WDC HIGHLIGHTS -->
 <!-- ================================ -->
-<section class="py-5 bg-light">
+<section class="py-5" style="background: #F3E5F5;">
     <div class="container">
-        <h2 class="text-center mb-5 fw-bold">
-            <i class="fas fa-star me-2 text-warning"></i>WDC Highlights
+        <h2 class="section-title text-center">
+            <i class="fas fa-star me-2" style="color: #FFC107;"></i>WDC Highlights
         </h2>
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="row g-4">
                     <div class="col-md-6">
-                        <div class="p-3 border-bottom">
-                            <h5><i class="fas fa-shield-alt text-primary me-2"></i>Safe & Secure</h5>
+                        <div class="highlight-item">
+                            <h5><i class="fas fa-shield-alt" style="color: #7B1FA2;"></i>Safe & Secure</h5>
                             <p class="text-muted ms-4 ps-2">Confidential reporting with zero retaliation.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="p-3 border-bottom">
-                            <h5><i class="fas fa-users text-success me-2"></i>Community Support</h5>
+                        <div class="highlight-item">
+                            <h5><i class="fas fa-users" style="color: #1976D2;"></i>Community Support</h5>
                             <p class="text-muted ms-4 ps-2">Connect with like-minded women and build a strong network.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="p-3 border-bottom">
-                            <h5><i class="fas fa-graduation-cap text-warning me-2"></i>Skill Development</h5>
+                        <div class="highlight-item">
+                            <h5><i class="fas fa-graduation-cap" style="color: #FFC107;"></i>Skill Development</h5>
                             <p class="text-muted ms-4 ps-2">Workshops &amp; training programs to enhance your skills.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="p-3 border-bottom">
-                            <h5><i class="fas fa-heart text-danger me-2"></i>Empowerment</h5>
+                        <div class="highlight-item">
+                            <h5><i class="fas fa-heart" style="color: #E91E63;"></i>Empowerment</h5>
                             <p class="text-muted ms-4 ps-2">Helping women achieve their potential and lead with confidence.</p>
                         </div>
                     </div>
@@ -166,16 +393,18 @@
 <!-- ================================ -->
 <!-- CONNECT WITH US -->
 <!-- ================================ -->
-<section class="py-5" style="background: #f8f9ff;">
+<section class="py-5" style="background: #E8EAF6;">
     <div class="container text-center">
-        <h2 class="fw-bold mb-4"><i class="fas fa-share-alt me-2 text-primary"></i>Connect With Us</h2>
+        <h2 class="section-title text-center">
+            <i class="fas fa-share-alt me-2"></i>Connect With Us
+        </h2>
         <p class="lead mb-4">Follow us on social media for updates, events, and more!</p>
         <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="#" class="btn btn-outline-primary btn-lg"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" class="btn btn-outline-info btn-lg"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="#" class="btn btn-outline-primary btn-lg"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="#" class="btn btn-outline-danger btn-lg"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="#" class="btn btn-outline-success btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" class="btn social-btn btn-outline-primary btn-lg"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="btn social-btn btn-outline-info btn-lg"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="btn social-btn btn-outline-primary btn-lg"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#" class="btn social-btn btn-outline-danger btn-lg"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="#" class="btn social-btn btn-outline-success btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </div>
 </section>
@@ -183,10 +412,10 @@
 <!-- ================================ -->
 <!-- FOOTER -->
 <!-- ================================ -->
-<footer class="text-white text-center py-4" style="background: linear-gradient(135deg, #6a11cb, #2575fc);">
-    <div class="container">
-        <p class="mb-0">" 2026 Women's Development Committee. All rights reserved."</p>
-        <small class="text-muted">💜 Empowering Women, Building Futures</small>
+<footer class="footer-custom text-center">
+    <div class="container py-2">
+        <p class="mb-0" style="font-size: 0.9rem;">" 2026 Women's Development Committee. All rights reserved."</p>
+        <small style="font-size: 0.8rem; color: rgba(255,255,255,0.8);">💜 Empowering Women, Building Futures</small>
     </div>
 </footer>
 
