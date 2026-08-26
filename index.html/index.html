@@ -137,7 +137,7 @@
             font-weight: 500;
         }
 
-        /* ===== HIGHLIGHTS ===== */
+        /* ===== HIGHLIGHTS - Equal Height Fix ===== */
         .highlight-item {
             padding: 20px;
             border-radius: var(--radius);
@@ -145,6 +145,10 @@
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
             border-bottom: 3px solid transparent;
+            height: 100%;  /* ← Makes all boxes equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .highlight-item:hover {
             transform: translateY(-5px);
@@ -154,12 +158,14 @@
         .highlight-item h5 {
             color: #7B1FA2;
             font-weight: 600;
+            margin-bottom: 5px;
         }
         .highlight-item h5 i {
             margin-right: 10px;
         }
         .highlight-item .text-muted {
             color: var(--gray-text) !important;
+            margin-bottom: 0;
         }
 
         /* ===== SOCIAL BUTTONS ===== */
@@ -264,7 +270,7 @@
 <!-- ================================ -->
 <section class="hero-section text-white text-center py-5">
     <div class="container py-5">
-        <h1 class="display-3 fw-bold"> Women's Development Committee </h1>
+        <h1 class="display-3 fw-bold">✨ Women's Development Committee ✨</h1>
         <p class="lead mb-4">Empowering, Supporting, and Celebrating Women on Campus</p>
         <div class="d-flex justify-content-center gap-3 flex-wrap">
             <a href="pages/events.html" class="btn btn-light btn-lg">
@@ -323,10 +329,10 @@
 <!-- ================================ -->
 <!-- OUR IMPACT -->
 <!-- ================================ -->
-<section class="py-5" style="background: light;">
+<section class="py-5">
     <div class="container">
         <h2 class="section-title text-center">
-            <i class="fas fa-chart-bar me-2"></i>  Our Impact
+            <i class="fas fa-chart-bar me-2"></i> 📊 Our Impact
         </h2>
         <div class="row text-center">
             <div class="col-md-3 col-6 mb-3">
@@ -350,7 +356,7 @@
 </section>
 
 <!-- ================================ -->
-<!-- WDC HIGHLIGHTS -->
+<!-- WDC HIGHLIGHTS (Equal Height Boxes) -->
 <!-- ================================ -->
 <section class="py-5" style="background: #F3E5F5;">
     <div class="container">
@@ -363,25 +369,25 @@
                     <div class="col-md-6">
                         <div class="highlight-item">
                             <h5><i class="fas fa-shield-alt" style="color: #7B1FA2;"></i>Safe & Secure</h5>
-                            <p class="text-muted ms-4 ps-2">Confidential reporting with zero retaliation.</p>
+                            <p class="text-muted">Confidential reporting with zero retaliation.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="highlight-item">
                             <h5><i class="fas fa-users" style="color: #1976D2;"></i>Community Support</h5>
-                            <p class="text-muted ms-4 ps-2">Connect with like-minded women and build a strong network.</p>
+                            <p class="text-muted">Connect with like-minded women and build a strong network.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="highlight-item">
                             <h5><i class="fas fa-graduation-cap" style="color: #FFC107;"></i>Skill Development</h5>
-                            <p class="text-muted ms-4 ps-2">Workshops &amp; training programs to enhance your skills.</p>
+                            <p class="text-muted">Workshops &amp; training programs to enhance your skills.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="highlight-item">
                             <h5><i class="fas fa-heart" style="color: #E91E63;"></i>Empowerment</h5>
-                            <p class="text-muted ms-4 ps-2">Helping women achieve their potential and lead with confidence.</p>
+                            <p class="text-muted">Helping women achieve their potential and lead with confidence.</p>
                         </div>
                     </div>
                 </div>
