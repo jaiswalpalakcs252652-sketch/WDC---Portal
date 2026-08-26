@@ -187,10 +187,15 @@
             margin-bottom: 10px;
         }
         
-        .footer-custom {
-            background: #1a1a2e;
-            padding: 30px 0;
+        .footer-gradient {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 40px 0;
             margin-top: 60px;
+            color: white;
+        }
+
+        .footer-gradient .gold-icon {
+            color: #fbbf24;
         }
 
         .values-card {
@@ -271,7 +276,7 @@
     </div>
 </nav>
 
-<!-- ========== HERO SECTION (NO "ABOUT US" BADGE) ========== -->
+<!-- ========== HERO SECTION ========== -->
 <section class="about-header text-white text-center">
     <div class="container position-relative">
         <h1 class="about-title">About the Committee</h1>
@@ -436,15 +441,26 @@
     </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
-<footer class="footer-custom text-white text-center">
+<!-- ========== FOOTER WITH GRADIENT ========== -->
+<footer class="footer-gradient">
     <div class="container">
-        <p class="mb-0">
-            <i class="fas fa-venus me-2" style="color: #a855f7;"></i>
-            &copy; 2026 Women's Development Committee. All rights reserved.
-            <span class="mx-2">|</span>
-            <i class="fas fa-heart" style="color: #ec4899;"></i> Empowering Women
-        </p>
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">
+                    <i class="fas fa-venus me-2 gold-icon"></i>
+                    &copy; 2026 Women's Development Committee. All rights reserved.
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">
+                    <i class="fas fa-heart me-1 gold-icon"></i> 
+                    Empowering Women
+                    <span class="mx-2" style="color: rgba(255,255,255,0.4);">|</span>
+                    <i class="fas fa-shield-alt me-1 gold-icon"></i> 
+                    WDC Portal
+                </p>
+            </div>
+        </div>
     </div>
 </footer>
 
