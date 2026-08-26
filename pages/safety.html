@@ -7,10 +7,156 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* ===== COLOR VARIABLES (Matching Home Page) ===== */
+        :root {
+            --primary: #6A1B9A;
+            --primary-dark: #4A148C;
+            --primary-light: #9C27B0;
+            --primary-bg: #E1BEE7;
+            --secondary: #E91E63;
+            --secondary-light: #F48FB1;
+            --dark: #1A237E;
+            --light-bg: #F5F5F5;
+            --white: #FFFFFF;
+            --success: #4CAF50;
+            --shadow: 0 4px 15px rgba(106, 27, 154, 0.15);
+            --radius: 12px;
+        }
+
+        /* ===== PAGE HEADER (Hero) ===== */
+        .page-header {
+            background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 50%, #E91E63 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        .page-header h1 {
+            font-weight: 700;
+            font-size: 4rem;  /* ← Increased heading size */
+        }
+        .page-header .lead {
+            opacity: 0.95;
+            font-size: 1.3rem;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .section-title i {
+            color: var(--secondary);
+        }
+
+        /* ===== HELPLINE CARDS ===== */
+        .helpline-card {
+            border: none;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        .helpline-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.25);
+        }
+        .helpline-card .list-group-item {
+            border-left: 3px solid var(--secondary);
+            margin-bottom: 2px;
+            border-radius: 4px;
+        }
+        .helpline-card .list-group-item strong {
+            color: var(--primary);
+        }
+        .helpline-card .card-title {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ===== SAFETY TIPS CARD ===== */
+        .tip-card .card-title {
+            color: var(--success) !important;
+            font-weight: 700;
+        }
+        .tip-card .list-group-item {
+            border-left: 3px solid var(--success);
+            margin-bottom: 2px;
+            border-radius: 4px;
+        }
+
+        /* ===== LEGAL RIGHTS CARD ===== */
+        .legal-card {
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            background: var(--primary-bg);
+        }
+        .legal-card .card-title {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .legal-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .legal-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(106, 27, 154, 0.1);
+        }
+        .legal-card ul li:last-child {
+            border-bottom: none;
+        }
+        .legal-card ul li i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary-custom {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary-custom:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+            color: white;
+        }
+
+        /* ===== FOOTER (Compact) ===== */
+        .footer-custom {
+            background: var(--dark);
+            color: white;
+            padding: 15px 0;
+        }
+        .footer-custom small {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 40px 0;
+            }
+            .page-header h1 {
+                font-size: 2.5rem;  /* Smaller on mobile */
+            }
+            .page-header .lead {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
+<!-- ================================ -->
+<!-- NAVBAR (Matches Home Page) -->
+<!-- ================================ -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="../index.html">
@@ -34,24 +180,30 @@
     </div>
 </nav>
 
-<!-- Page Header -->
-<section class="py-5 bg-danger text-white text-center">
+<!-- ================================ -->
+<!-- PAGE HEADER (Hero - Updated Colors + Larger Heading) -->
+<!-- ================================ -->
+<section class="page-header text-center">
     <div class="container">
-        <h1 class="display-4 fw-bold"><i class="fas fa-shield-alt me-3"></i>Women's Safety</h1>
+        <h1><i class="fas fa-shield-alt me-3"></i>Women's Safety</h1>
         <p class="lead">Your safety is our priority. Know your rights and resources.</p>
     </div>
 </section>
 
-<!-- Safety Content -->
+<!-- ================================ -->
+<!-- SAFETY CONTENT (Layout Preserved) -->
+<!-- ================================ -->
 <section class="py-5">
     <div class="container">
         <div class="row">
             <!-- Emergency Helplines -->
             <div class="col-md-6 mb-4">
-                <div class="card shadow-sm h-100">
+                <div class="card helpline-card h-100">
                     <div class="card-body">
-                        <h3 class="text-danger"><i class="fas fa-phone-alt me-2"></i>Emergency Helplines</h3>
-                        <ul class="list-group list-group-flush mt-3">
+                        <h4 class="card-title section-title">
+                            <i class="fas fa-phone-alt me-2"></i>Emergency Helplines
+                        </h4>
+                        <ul class="list-group list-group-flush">
                             <li class="list-group-item"><strong>Women's Helpline:</strong> 1091</li>
                             <li class="list-group-item"><strong>Police Emergency:</strong> 100</li>
                             <li class="list-group-item"><strong>Ambulance:</strong> 102</li>
@@ -61,12 +213,15 @@
                     </div>
                 </div>
             </div>
+
             <!-- Safety Tips -->
             <div class="col-md-6 mb-4">
-                <div class="card shadow-sm h-100">
+                <div class="card tip-card helpline-card h-100">
                     <div class="card-body">
-                        <h3 class="text-success"><i class="fas fa-lightbulb me-2"></i>Safety Tips</h3>
-                        <ul class="list-group list-group-flush mt-3">
+                        <h4 class="card-title section-title" style="color: #4CAF50 !important;">
+                            <i class="fas fa-lightbulb me-2" style="color: #FFC107;"></i>Safety Tips
+                        </h4>
+                        <ul class="list-group list-group-flush">
                             <li class="list-group-item">✅ Always share your location with friends/family</li>
                             <li class="list-group-item">✅ Save emergency contacts on speed dial</li>
                             <li class="list-group-item">✅ Avoid isolated areas after dark</li>
@@ -79,30 +234,42 @@
         </div>
 
         <!-- Legal Rights -->
-        <div class="card shadow-sm mt-4">
+        <div class="card legal-card mt-4">
             <div class="card-body">
-                <h3 class="text-primary"><i class="fas fa-gavel me-2"></i>Legal Rights & Policies</h3>
-                <p>Your college has a zero-tolerance policy against harassment. You have the right to:</p>
+                <h4 class="card-title">
+                    <i class="fas fa-gavel me-2"></i>Legal Rights & Policies
+                </h4>
+                <p>Your college has a <strong>zero-tolerance policy</strong> against harassment. You have the right to:</p>
                 <ul>
-                    <li>Report harassment without fear of retaliation</li>
-                    <li>Confidential counseling and support services</li>
-                    <li>Fair investigation of complaints</li>
-                    <li>Access to legal aid and representation</li>
+                    <li><i class="fas fa-check-circle"></i> Report harassment without fear of retaliation</li>
+                    <li><i class="fas fa-check-circle"></i> Confidential counseling and support services</li>
+                    <li><i class="fas fa-check-circle"></i> Fair investigation of complaints</li>
+                    <li><i class="fas fa-check-circle"></i> Access to legal aid and representation</li>
                 </ul>
-                <a href="grievance.html" class="btn btn-danger mt-2"><i class="fas fa-file-alt me-2"></i>File a Grievance</a>
+                <a href="grievance.html" class="btn btn-primary-custom mt-2">
+                    <i class="fas fa-file-alt me-2"></i>File a Grievance
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-        <p class="mb-0">" 2026 Women's Development Committee. All rights reserved."</p>
+<!-- ================================ -->
+<!-- FOOTER (Compact) -->
+<!-- ================================ -->
+<footer class="footer-custom text-center">
+    <div class="container py-2">
+        <p class="mb-0" style="font-size: 0.9rem;">&copy; 2026 Women's Development Committee. All rights reserved.</p>
+        <small style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">💜 Empowering Women, Building Futures</small>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ================================ -->
+<!-- SCRIPTS -->
+<!-- ================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+</script>
 <script src="../assets/js/script.js"></script>
+
 </body>
 </html>
