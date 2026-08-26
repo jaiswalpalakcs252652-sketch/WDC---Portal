@@ -6,15 +6,252 @@
     <title>About - WDC Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <style>
+        /* Custom styles for About page - Purple & Gold theme */
+        body {
+            background: linear-gradient(135deg, #f8f0ff 0%, #f0e6ff 100%);
+        }
+        
+        .about-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .about-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .about-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .vision-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(106, 17, 203, 0.1);
+            border-left: 6px solid #6a11cb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(106, 17, 203, 0.2);
+        }
+        
+        .vision-card i {
+            color: #6a11cb;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .vision-card h4 {
+            color: #4a0e8a;
+            font-weight: 700;
+        }
+        
+        .vision-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .member-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-8px);
+            border-bottom-color: #6a11cb;
+        }
+        
+        .member-card .avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .member-card h5 {
+            color: #2d2d2d;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        .member-card p {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 60px 0;
+            border-radius: 30px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+        }
+        
+        .stat-item .label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .mission-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .mission-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0e6ff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #444;
+        }
+        
+        .mission-list li i {
+            color: #6a11cb;
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: rgba(106, 17, 203, 0.1);
+            color: #6a11cb;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-custom {
+            background: #1a1a2e;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        .values-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .values-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .values-card i {
+            font-size: 2.5rem;
+            color: #6a11cb;
+        }
+        
+        .values-card h5 {
+            color: #4a0e8a;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        
+        .values-card p {
+            color: #777;
+            font-size: 0.95rem;
+        }
+
+        .btn-learn {
+            background: white;
+            color: #6a11cb;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid white;
+        }
+
+        .btn-learn:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
 
 <!-- ========== NAVBAR ========== -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="../index.html">
-            <img src="../assets/images/logo.png" alt="Logo" height="35" class="me-2">
+        <a class="navbar-brand fw-bold" href="/index.html">
+            <img src="/assets/images/logo.png" alt="Logo" height="35" class="me-2">
             WDC Portal
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -22,52 +259,58 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
-                <li class="nav-item"><a class="nav-link" href="grievance.html">Grievance</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-outline-light btn-sm ms-2" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/pages/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/safety.html">Safety</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/grievance.html">Grievance</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-outline-light btn-sm ms-2" href="/pages/login.html">Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Page Header -->
-<section class="py-5 bg-primary text-white text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold">About the Committee</h1>
-        <p class="lead">Empowering Women Through Education and Support</p>
+<!-- ========== HERO SECTION (NO "ABOUT US" BADGE) ========== -->
+<section class="about-header text-white text-center">
+    <div class="container position-relative">
+        <h1 class="about-title">About the Committee</h1>
+        <p class="about-subtitle">Empowering Women Through Education, Safety & Support</p>
+        <div class="mt-4">
+            <a href="#committee" class="btn-learn">
+                <i class="fas fa-arrow-down me-2"></i>Learn More
+            </a>
+        </div>
     </div>
 </section>
 
-<!-- Content -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2 class="text-primary">Our Vision</h2>
-                <p>To create a safe, inclusive, and empowering campus environment where every woman student can thrive academically, personally, and professionally.</p>
-                
-                <h2 class="text-primary mt-4">Our Mission</h2>
-                <ul>
-                    <li>Promote gender equality and women's empowerment</li>
-                    <li>Provide safety resources and support systems</li>
-                    <li>Organize workshops and events for skill development</li>
-                    <li>Address grievances confidentially and effectively</li>
-                </ul>
-            </div>
-            <div class="col-lg-6">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Committee Members</h4>
-                        <ul class="list-unstyled">
-                            <li class="py-2 border-bottom"><strong>Dr. Smita Sharma</strong> - Faculty Coordinator</li>
-                            <li class="py-2 border-bottom"><strong>Prof. Neha Patel</strong> - Co-Coordinator</li>
-                            <li class="py-2 border-bottom"><strong>Ms. Priya Singh</strong> - Student Representative</li>
-                            <li class="py-2"><strong>Ms. Ananya Reddy</strong> - Student Representative</li>
-                        </ul>
+<!-- ========== STATS ========== -->
+<section class="container mt-4">
+    <div class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-3">
+                    <div class="stat-item">
+                        <span class="number">5+</span>
+                        <span class="label">Years of Service</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="stat-item">
+                        <span class="number">200+</span>
+                        <span class="label">Students Empowered</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="stat-item">
+                        <span class="number">50+</span>
+                        <span class="label">Events Conducted</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="stat-item">
+                        <span class="number">100%</span>
+                        <span class="label">Grievances Resolved</span>
                     </div>
                 </div>
             </div>
@@ -75,14 +318,137 @@
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
+<!-- ========== COMMITTEE MEMBERS ========== -->
+<section id="committee" class="py-5">
     <div class="container">
-        <p class="mb-0">"2026 Women's Development Committee. All rights reserved."</p>
+        <div class="text-center mb-5">
+            <span class="section-badge">Team</span>
+            <h2 class="display-5 fw-bold" style="color: #4a0e8a;">Committee Members</h2>
+            <p class="text-muted">Dedicated leaders working for women's welfare</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3">
+                <div class="member-card">
+                    <div class="avatar">DS</div>
+                    <h5>Dr. Smita Sharma</h5>
+                    <p>Faculty Coordinator</p>
+                    <span class="badge" style="background: #6a11cb;">Lead</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="member-card">
+                    <div class="avatar">NP</div>
+                    <h5>Prof. Neha Patel</h5>
+                    <p>Co-Coordinator</p>
+                    <span class="badge" style="background: #2575fc;">Support</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="member-card">
+                    <div class="avatar">PS</div>
+                    <h5>Ms. Priya Singh</h5>
+                    <p>Student Representative</p>
+                    <span class="badge" style="background: #ff6b6b;">Student</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="member-card">
+                    <div class="avatar">AR</div>
+                    <h5>Ms. Ananya Reddy</h5>
+                    <p>Student Representative</p>
+                    <span class="badge" style="background: #ff6b6b;">Student</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== VISION & MISSION ========== -->
+<section class="py-5" style="background: white;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">Our Core</span>
+            <h2 class="display-5 fw-bold" style="color: #4a0e8a;">Vision & Mission</h2>
+            <p class="text-muted">Driven by purpose, powered by compassion</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="vision-card">
+                    <i class="fas fa-eye"></i>
+                    <h4>Our Vision</h4>
+                    <p>To create a safe, inclusive, and empowering campus environment where every woman student can thrive academically, personally, and professionally.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="vision-card" style="border-left-color: #2575fc;">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Our Mission</h4>
+                    <ul class="mission-list">
+                        <li><i class="fas fa-venus"></i> Promote gender equality & women's empowerment</li>
+                        <li><i class="fas fa-shield-alt"></i> Provide safety resources & support systems</li>
+                        <li><i class="fas fa-chalkboard-teacher"></i> Organize workshops & skill development</li>
+                        <li><i class="fas fa-hand-holding-heart"></i> Address grievances confidentially & effectively</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== VALUES ========== -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">Our Values</span>
+            <h2 class="display-5 fw-bold" style="color: #4a0e8a;">What We Stand For</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="values-card">
+                    <i class="fas fa-heart"></i>
+                    <h5>Empathy</h5>
+                    <p>Understanding and supporting every woman's unique journey</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="values-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h5>Equality</h5>
+                    <p>Ensuring equal opportunities and fair treatment for all</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="values-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h5>Safety</h5>
+                    <p>Creating a secure environment for every woman on campus</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="values-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h5>Empowerment</h5>
+                    <p>Building confidence and leadership skills in women</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer-custom text-white text-center">
+    <div class="container">
+        <p class="mb-0">
+            <i class="fas fa-venus me-2" style="color: #a855f7;"></i>
+            &copy; 2026 Women's Development Committee. All rights reserved.
+            <span class="mx-2">|</span>
+            <i class="fas fa-heart" style="color: #ec4899;"></i> Empowering Women
+        </p>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/script.js"></script>
+<script src="/assets/js/script.js"></script>
 </body>
 </html>
