@@ -7,10 +7,160 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* ===== COLOR VARIABLES (Green-Teal Theme) ===== */
+        :root {
+            --primary: #00897B;
+            --primary-light: #26A69A;
+            --primary-bg: #E0F2F1;
+            --secondary: #4A148C;
+            --accent-gold: #FFB300;
+            --white: #FFFFFF;
+            --shadow: 0 4px 15px rgba(0, 137, 123, 0.15);
+            --shadow-hover: 0 8px 25px rgba(0, 137, 123, 0.25);
+            --radius: 12px;
+            --gray-text: #555555;
+        }
+
+        /* ===== PAGE HEADER (Hero - SHORTER) ===== */
+        .page-header {
+            background: linear-gradient(135deg, #00897B 0%, #26A69A 50%, #4A148C 100%);
+            color: white;
+            padding: 40px 0;
+        }
+        .page-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+        }
+        .page-header .lead {
+            opacity: 0.95;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            color: #00897B;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #00897B, #FFB300);
+            border-radius: 2px;
+        }
+        .section-title i {
+            color: #00897B;
+        }
+
+        /* ===== GALLERY GRID ===== */
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            height: 250px;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: all 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== EMPTY BOX (For Future Photos - NO ICON) ===== */
+        .empty-box {
+            border: 2px dashed #00897B;
+            border-radius: var(--radius);
+            background: #E0F2F1;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+        .empty-box:hover {
+            background: #B2DFDB;
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .empty-box h6 {
+            color: #00897B;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        .empty-box p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-custom {
+            background: linear-gradient(135deg, #00897B, #4A148C);
+            color: white;
+            padding: 15px 0;
+        }
+        .footer-custom small {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 30px 0;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .page-header .lead {
+                font-size: 0.95rem;
+            }
+            .gallery-item,
+            .empty-box {
+                height: 200px;
+            }
+            .empty-box h6 {
+                font-size: 0.95rem;
+            }
+            .empty-box p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-item,
+            .empty-box {
+                height: 180px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
+<!-- ================================ -->
+<!-- NAVBAR -->
+<!-- ================================ -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="../index.html">
@@ -34,57 +184,86 @@
     </div>
 </nav>
 
-<!-- Page Header -->
-<section class="py-5 bg-info text-white text-center">
+<!-- ================================ -->
+<!-- PAGE HEADER (SHORTER) -->
+<!-- ================================ -->
+<section class="page-header text-center">
     <div class="container">
-        <h1 class="display-4 fw-bold"><i class="fas fa-images me-3"></i>Event Gallery</h1>
+        <h1><i class="fas fa-images me-3"></i>Event Gallery</h1>
         <p class="lead">Highlights from our workshops, seminars, and celebrations</p>
     </div>
 </section>
 
-<!-- Gallery Grid -->
-<section class="py-5">
+<!-- ================================ -->
+<!-- GALLERY GRID (5 Images + 1 Empty Box) -->
+<!-- ================================ -->
+<section class="py-5" style="background: #E0F2F1;">
     <div class="container">
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card shadow-sm hover-card">
-                    <img src="https://via.placeholder.com/600x400/6a11cb/ffffff?text=Workshop+2026" class="card-img-top" alt="Event 1" style="height: 250px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h6>Women Safety Workshop 2026</h6>
-                        <small class="text-muted">Sept 15, 2026</small>
-                    </div>
+
+            <!-- Image 1 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="../assests/images/gallery1.png" alt="Gallery Image 1">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm hover-card">
-                    <img src="https://via.placeholder.com/600x400/2575fc/ffffff?text=Seminar+2026" class="card-img-top" alt="Event 2" style="height: 250px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h6>Career Guidance Seminar</h6>
-                        <small class="text-muted">Sept 20, 2026</small>
-                    </div>
+
+            <!-- Image 2 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="../assests/images/gallery2.jpg" alt="Gallery Image 2">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm hover-card">
-                    <div class="card-body text-center py-5" style="height: 250px; display: flex; flex-direction: column; justify-content: center;">
-                        <i class="fas fa-plus-circle fa-4x text-primary mb-3"></i>
-                        <h6>More Photos Coming Soon</h6>
-                        <small class="text-muted">Stay tuned!</small>
-                    </div>
+
+            <!-- Image 3 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="../assests/images/gallery3.jpg" alt="Gallery Image 3">
                 </div>
             </div>
+
+            <!-- Image 4 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="../assests/images/gallery4.jpg" alt="Gallery Image 4">
+                </div>
+            </div>
+
+            <!-- Image 5 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="../assests/images/gallery5.png" alt="Gallery Image 5">
+                </div>
+            </div>
+
+            <!-- EMPTY BOX (For Future Photos - No Icon) -->
+            <div class="col-md-4 col-sm-6">
+                <div class="empty-box">
+                    <h6>More Photos Coming Soon</h6>
+                    <p>Stay tuned for updates!</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-        <p class="mb-0">&copy; 2026 Women's Development Committee. All rights reserved.</p>
+<!-- ================================ -->
+<!-- FOOTER -->
+<!-- ================================ -->
+<footer class="footer-custom text-center">
+    <div class="container py-2">
+        <p class="mb-0" style="font-size: 0.9rem;">&copy; 2026 Women's Development Committee. All rights reserved.</p>
+        <small style="font-size: 0.8rem; color: rgba(255,255,255,0.8);">💜 Empowering Women, Building Futures</small>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ================================ -->
+<!-- SCRIPTS -->
+<!-- ================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+</script>
 <script src="../assets/js/script.js"></script>
+
 </body>
 </html>
