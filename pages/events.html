@@ -22,23 +22,29 @@
         .events-hero {
             background: linear-gradient(
                 135deg,
-                #6A11CB,
-                #2575FC
+                #7B2CBF,
+                #D66DFF
             ) !important;
+
             padding: 75px 0;
         }
 
         .events-hero h1 {
             letter-spacing: 1px;
+            color: #ffffff;
         }
 
         .events-hero p {
             margin-bottom: 0;
             opacity: 0.95;
+            color: #ffffff;
         }
 
 
-        /* Events Section */
+        /* ==========================================
+           EVENTS SECTION
+        ========================================== */
+
         .events-section {
             background: #F5E8F7;
             padding: 65px 0;
@@ -60,19 +66,25 @@
         }
 
 
-        /* Event Cards */
+        /* ==========================================
+           EVENT CARDS
+        ========================================== */
+
         .event-card {
             background: #FFFFFF;
             border: none;
             border-radius: 18px;
             overflow: hidden;
             height: 100%;
+
             box-shadow: 0 8px 25px rgba(106, 17, 203, 0.12);
+
             transition: all 0.3s ease;
         }
 
         .event-card:hover {
             transform: translateY(-8px);
+
             box-shadow: 0 16px 35px rgba(106, 17, 203, 0.20);
         }
 
@@ -98,138 +110,147 @@
             line-height: 1;
             margin-bottom: 15px;
         }
-.upcoming-event {
-    margin-top: 45px;
-    padding: 28px 32px;
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    gap: 22px;
-
-    background: linear-gradient(
-        135deg,
-        #6A11CB,
-        #2575FC
-    );
-
-    color: white;
-
-    border-radius: 18px;
-
-    box-shadow: 0 10px 30px rgba(106, 17, 203, 0.20);
-
-    transition: 0.3s ease;
-}
-
-.upcoming-event:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(106, 17, 203, 0.25);
-}
 
 
-/* Icon */
+        /* ==========================================
+           UPCOMING EVENT
+        ========================================== */
 
-.upcoming-icon {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
+        .upcoming-event {
+            margin-top: 45px;
+            padding: 28px 32px;
 
-    border-radius: 50%;
+            width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 22px;
 
-    background: rgba(255, 255, 255, 0.20);
+            background: linear-gradient(
+                135deg,
+                #6A11CB,
+                #2575FC
+            );
 
-    color: white;
+            color: white;
 
-    font-size: 24px;
-}
+            border-radius: 18px;
 
+            box-shadow: 0 10px 30px rgba(106, 17, 203, 0.20);
 
-/* Text */
+            transition: 0.3s ease;
+        }
 
-.upcoming-content {
-    flex: 1;
-}
+        .upcoming-event:hover {
+            transform: translateY(-4px);
 
-.upcoming-label {
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    color: white;
-}
-
-.upcoming-content h3 {
-    margin: 5px 0 6px;
-
-    font-size: 22px;
-    font-weight: 700;
-
-    color: white;
-}
-
-.upcoming-content p {
-    margin: 0;
-
-    font-size: 14px;
-
-    color: white;
-    opacity: 0.9;
-}
+            box-shadow: 0 15px 35px rgba(106, 17, 203, 0.25);
+        }
 
 
-/* Arrow */
+        /* Icon */
 
-.upcoming-action {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
+        .upcoming-icon {
+            width: 58px;
+            height: 58px;
+            min-width: 58px;
 
-    border-radius: 50%;
+            border-radius: 50%;
 
-    background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    color: #6A11CB;
+            background: rgba(255, 255, 255, 0.20);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            color: white;
 
-    transition: 0.3s ease;
-}
-
-.upcoming-event:hover .upcoming-action {
-    transform: translateX(5px);
-}
+            font-size: 24px;
+        }
 
 
-/* Mobile */
+        /* Text */
 
-@media (max-width: 767px) {
+        .upcoming-content {
+            flex: 1;
+        }
 
-    .upcoming-event {
-        padding: 22px 18px;
-        gap: 15px;
-    }
+        .upcoming-label {
+            font-size: 11px;
+            font-weight: 700;
 
-    .upcoming-content h3 {
-        font-size: 18px;
-    }
+            letter-spacing: 1.5px;
 
-    .upcoming-content p {
-        font-size: 13px;
-    }
+            color: white;
+        }
 
-    .upcoming-action {
-        display: none;
-    }
-}
+        .upcoming-content h3 {
+            margin: 5px 0 6px;
+
+            font-size: 22px;
+            font-weight: 700;
+
+            color: white;
+        }
+
+        .upcoming-content p {
+            margin: 0;
+
+            font-size: 14px;
+
+            color: white;
+            opacity: 0.9;
+        }
+
+
+        /* Arrow */
+
+        .upcoming-action {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #6A11CB;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.3s ease;
+        }
+
+        .upcoming-event:hover .upcoming-action {
+            transform: translateX(5px);
+        }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 767px) {
+
+            .upcoming-event {
+                padding: 22px 18px;
+                gap: 15px;
+            }
+
+            .upcoming-content h3 {
+                font-size: 18px;
+            }
+
+            .upcoming-content p {
+                font-size: 13px;
+            }
+
+            .upcoming-action {
+                display: none;
+            }
+        }
 
 
         /* ==========================================
@@ -237,18 +258,37 @@
         ========================================== */
 
         .events-footer {
-    width: 100%;
-    background: linear-gradient(
-        135deg,
-        #6A11CB,
-        #2575FC
-    ) !important;
+            width: 100%;
 
-    color: white !important;
+            background: linear-gradient(
+                135deg,
+                #6A11CB,
+                #2575FC
+            ) !important;
 
-    margin: 0 !important;
-    padding: 20px 0;
-}
+            color: white !important;
+
+            margin: 0 !important;
+
+            padding: 25px 0 !important;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            text-align: center;
+        }
+
+        .footer-left,
+        .footer-right {
+            font-size: 14px;
+            text-align: center;
+        }
 
     </style>
 </head>
@@ -322,7 +362,7 @@
     <div class="container">
 
         <h1 class="display-4 fw-bold">
-             Event Highlights
+            Event Highlights
         </h1>
 
         <p class="lead">
@@ -343,7 +383,6 @@
     <div class="container">
 
 
-
         <!-- TWO COMPLETED EVENTS -->
 
         <div class="row g-4 justify-content-center">
@@ -357,7 +396,6 @@
 
                 <div class="event-card">
 
-                    <!-- ORIGINAL PHOTO -->
                     <img
                         src="../assests/images/women-safety.png"
                         class="card-img-top"
@@ -383,6 +421,7 @@
                         <p class="card-text">
                             <i class="fas fa-users me-2 event-icon"></i>
                             <strong>Organising Committee:</strong><br>
+
                             Mr. Navin Kunwar Sensei, a 4th Dan Black Belt
                             and Multi-World Record Holder in martial arts.
                         </p>
@@ -406,7 +445,6 @@
 
                 <div class="event-card">
 
-                    <!-- ORIGINAL PHOTO -->
                     <img
                         src="../assests/images/event2.png"
                         class="card-img-top"
@@ -432,7 +470,9 @@
                         <p class="card-text">
                             <i class="fas fa-users me-2 event-icon"></i>
                             <strong>Organising Committee:</strong><br>
-                            Manisha Mehul Sayani, Women's Development Cell & IQAC
+
+                            Manisha Mehul Sayani,
+                            Women's Development Cell & IQAC
                         </p>
 
                         <a href="#" class="btn event-btn w-100 mt-3">
@@ -447,51 +487,77 @@
 
         </div>
 
-<!-- Upcoming Event -->
-<div class="upcoming-event">
 
-    <div class="upcoming-icon">
-        <i class="fas fa-calendar-check"></i>
+        <!-- ==========================================
+             UPCOMING EVENT
+        =========================================== -->
+
+        <div class="upcoming-event">
+
+            <div class="upcoming-icon">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+
+            <div class="upcoming-content">
+
+                <span class="upcoming-label">
+                    UPCOMING
+                </span>
+
+                <h3>
+                    New WDC Initiatives Are Coming Soon
+                </h3>
+
+                <p>
+                    Stay connected for upcoming workshops,
+                    awareness sessions, safety programs and
+                    empowerment activities.
+                </p>
+
+            </div>
+
+            <div class="upcoming-action">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="upcoming-content">
+</section>
 
-        <span class="upcoming-label">
-            UPCOMING
-        </span>
 
-        <h3>
-            New WDC Initiatives Are Coming Soon
-        </h3>
-
-        <p>
-            Stay connected for upcoming workshops,
-            awareness sessions, safety programs and
-            empowerment activities.
-        </p>
-
-    </div>
-
-    <div class="upcoming-action">
-        <i class="fas fa-arrow-right"></i>
-    </div>
-
-</div>
 <!-- ==========================================
      FOOTER
 ========================================== -->
 
-<footer class="events-footer text-center py-4">
+<footer class="events-footer">
+
     <div class="container">
-        <p class="mb-0">
-            &copy; 2026 Women's Development Committee. All rights reserved.
-        </p>
+
+        <div class="footer-content">
+
+            <div class="footer-left">
+                &copy; 2026 Women's Development Committee. All rights reserved.
+            </div>
+
+            <div class="footer-right">
+                💜 Empowering Women, Building Futures
+            </div>
+
+        </div>
+
     </div>
+
 </footer>
+
+
 <!-- Bootstrap JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom JS -->
+
 <script src="../assets/js/script.js"></script>
 
 
