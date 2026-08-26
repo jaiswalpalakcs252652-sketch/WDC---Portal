@@ -11,11 +11,255 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+
+        /* ==========================================
+           EVENTS PAGE ONLY
+        ========================================== */
+
+        /* Hero Section */
+        .events-hero {
+            background: linear-gradient(
+                135deg,
+                #6A11CB,
+                #2575FC
+            ) !important;
+            padding: 75px 0;
+        }
+
+        .events-hero h1 {
+            letter-spacing: 1px;
+        }
+
+        .events-hero p {
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+
+
+        /* Events Section */
+        .events-section {
+            background: #F5E8F7;
+            padding: 65px 0;
+        }
+
+
+        /* Section Heading */
+        .events-heading {
+            color: #6A11CB;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .events-subheading {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+
+        /* Event Cards */
+        .event-card {
+            background: #FFFFFF;
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 8px 25px rgba(106, 17, 203, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(106, 17, 203, 0.20);
+        }
+
+
+        /* Event Images */
+        .event-card .card-img-top {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+
+        /* Card Body */
+        .event-card .card-body {
+            padding: 25px;
+        }
+
+
+        /* Card Title */
+        .event-card .card-title {
+            color: #20252A;
+            font-size: 20px;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+.upcoming-event {
+    margin-top: 45px;
+    padding: 28px 32px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #6A11CB,
+        #2575FC
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(106, 17, 203, 0.20);
+
+    transition: 0.3s ease;
+}
+
+.upcoming-event:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(106, 17, 203, 0.25);
+}
+
+
+/* Icon */
+
+.upcoming-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    color: white;
+
+    font-size: 24px;
+}
+
+
+/* Text */
+
+.upcoming-content {
+    flex: 1;
+}
+
+.upcoming-label {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: white;
+}
+
+.upcoming-content h3 {
+    margin: 5px 0 6px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: white;
+}
+
+.upcoming-content p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: white;
+    opacity: 0.9;
+}
+
+
+/* Arrow */
+
+.upcoming-action {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #6A11CB;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.upcoming-event:hover .upcoming-action {
+    transform: translateX(5px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .upcoming-event {
+        padding: 22px 18px;
+        gap: 15px;
+    }
+
+    .upcoming-content h3 {
+        font-size: 18px;
+    }
+
+    .upcoming-content p {
+        font-size: 13px;
+    }
+
+    .upcoming-action {
+        display: none;
+    }
+}
+
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        .events-footer {
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #6A11CB,
+        #2575FC
+    ) !important;
+
+    color: white !important;
+
+    margin: 0 !important;
+    padding: 20px 0;
+}
+
+    </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
+
+<!-- ==========================================
+     NAVBAR
+========================================== -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
 
@@ -69,20 +313,20 @@
 </nav>
 
 
-<!-- Page Header -->
-<section
-    class="py-5 text-white text-center"
-    style="background: linear-gradient(135deg, #6f00ff, #2878f0);"
->
+<!-- ==========================================
+     PAGE HEADER
+========================================== -->
+
+<section class="py-5 text-white text-center events-hero">
 
     <div class="container">
 
         <h1 class="display-4 fw-bold">
-            Upcoming Events
+             Event Highlights
         </h1>
 
         <p class="lead">
-            Register for workshops, seminars, and awareness programs
+            Explore the initiatives and programs conducted by the Women's Development Cell.
         </p>
 
     </div>
@@ -90,57 +334,60 @@
 </section>
 
 
-<!-- Events List -->
-<section class="py-5">
+<!-- ==========================================
+     EVENTS SECTION
+========================================== -->
+
+<section class="events-section">
 
     <div class="container">
 
-        <div class="row g-4">
 
 
-            <!-- Event 1 -->
-            <div class="col-lg-4 col-md-4 col-sm-12">
+        <!-- TWO COMPLETED EVENTS -->
 
-                <div class="card h-100 shadow-sm hover-card">
+        <div class="row g-4 justify-content-center">
 
-                    <!-- Event 1 Photo -->
-                   <img
-    src="../assests/images/women-safety.png"
-    class="card-img-top"
-    alt="Women's Safety Awareness Program"
-    style="height: 260px; object-fit: cover;"
->
+
+            <!-- ==================================
+                 EVENT 1
+            =================================== -->
+
+            <div class="col-lg-5 col-md-6 col-sm-12">
+
+                <div class="event-card">
+
+                    <!-- ORIGINAL PHOTO -->
+                    <img
+                        src="../assests/images/women-safety.png"
+                        class="card-img-top"
+                        alt="Women's Safety Awareness Program"
+                    >
+
                     <div class="card-body d-flex flex-column">
 
+                        <span class="completed-badge">
+                            <i class="fas fa-check-circle me-1"></i>
+                            COMPLETED
+                        </span>
+
                         <h5 class="card-title fw-bold">
-                            Women's Safety Awareness Program
+                            Women Development Cell - WDC Self Defence Workshop
                         </h5>
 
-
-                        <!-- Event Date -->
                         <p class="card-text">
-                            <i class="far fa-calendar-alt me-2 text-primary"></i>
-                            Event Date: 13-09-2024
+                            <i class="far fa-calendar-alt me-2 event-icon"></i>
+                            <strong>Event Date:</strong> 15-07-2025
                         </p>
 
-
-                        <!-- Status -->
                         <p class="card-text">
-                            <i class="fas fa-check-circle me-2 text-success"></i>
-                            Status: COMPLETED
+                            <i class="fas fa-users me-2 event-icon"></i>
+                            <strong>Organising Committee:</strong><br>
+                            Mr. Navin Kunwar Sensei, a 4th Dan Black Belt
+                            and Multi-World Record Holder in martial arts.
                         </p>
 
-
-                        <!-- Organising Committee -->
-                        <p class="card-text">
-                            <i class="fas fa-users me-2 text-primary"></i>
-                            <strong>Organising Committee:</strong>
-                            Manisha Mehul Sayani, Women's Development Cell & IQAC
-                        </p>
-
-
-                        <!-- Button -->
-                        <a href="#" class="btn btn-primary w-100 mt-auto">
+                        <a href="#" class="btn event-btn w-100 mt-3">
                             View Details
                         </a>
 
@@ -151,40 +398,45 @@
             </div>
 
 
-            <!-- Event 2 -->
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <!-- ==================================
+                 EVENT 2
+            =================================== -->
 
-                <div class="card h-100 shadow-sm hover-card">
+            <div class="col-lg-5 col-md-6 col-sm-12">
 
+                <div class="event-card">
+
+                    <!-- ORIGINAL PHOTO -->
                     <img
-                        src="https://via.placeholder.com/600x400/2575fc/ffffff?text=Career+Guidance"
+                        src="../assests/images/event2.png"
                         class="card-img-top"
-                        alt="Career Guidance"
-                        style="height: 260px; object-fit: cover;"
+                        alt="Women's Safety Awareness Program"
                     >
 
                     <div class="card-body d-flex flex-column">
 
+                        <span class="completed-badge">
+                            <i class="fas fa-check-circle me-1"></i>
+                            COMPLETED
+                        </span>
+
                         <h5 class="card-title fw-bold">
-                            Career Guidance Seminar
+                            IQAC - WDC Women's Safety Awareness Program
                         </h5>
 
                         <p class="card-text">
-                            <i class="far fa-calendar-alt me-2 text-primary"></i>
-                            Sept 20, 2026
+                            <i class="far fa-calendar-alt me-2 event-icon"></i>
+                            <strong>Event Date:</strong> 13-09-2024
                         </p>
 
                         <p class="card-text">
-                            <i class="fas fa-map-marker-alt me-2 text-danger"></i>
-                            Room 301
+                            <i class="fas fa-users me-2 event-icon"></i>
+                            <strong>Organising Committee:</strong><br>
+                            Manisha Mehul Sayani, Women's Development Cell & IQAC
                         </p>
 
-                        <p class="card-text">
-                            Women in Tech panel discussion with industry experts.
-                        </p>
-
-                        <a href="#" class="btn btn-primary w-100 mt-auto">
-                            Register Now
+                        <a href="#" class="btn event-btn w-100 mt-3">
+                            View Details
                         </a>
 
                     </div>
@@ -193,54 +445,55 @@
 
             </div>
 
-
-            <!-- Event 3 -->
-            <div class="col-lg-4 col-md-4 col-sm-12">
-
-                <div class="card h-100 shadow-sm hover-card">
-
-                    <div class="card-body text-center d-flex flex-column justify-content-center">
-
-                        <i class="fas fa-plus-circle fa-4x text-primary mb-3"></i>
-
-                        <h5 class="fw-bold">
-                            More Events Coming
-                        </h5>
-
-                        <p class="text-muted">
-                            Stay tuned for updates!
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
         </div>
 
+<!-- Upcoming Event -->
+<div class="upcoming-event">
+
+    <div class="upcoming-icon">
+        <i class="fas fa-calendar-check"></i>
     </div>
 
-</section>
+    <div class="upcoming-content">
 
+        <span class="upcoming-label">
+            UPCOMING
+        </span>
 
-<!-- Footer -->
-<footer style="background: linear-gradient(135deg, #6a11cb, #2575fc) !important; color: white !important;" class="text-center py-4 mt-5">
-    <div class="container">
+        <h3>
+            New WDC Initiatives Are Coming Soon
+        </h3>
 
-        <p class="mb-0">
-            &copy; 2026 Women's Development Committee. All rights reserved.
+        <p>
+            Stay connected for upcoming workshops,
+            awareness sessions, safety programs and
+            empowerment activities.
         </p>
 
     </div>
 
+    <div class="upcoming-action">
+        <i class="fas fa-arrow-right"></i>
+    </div>
+
+</div>
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="events-footer text-center py-4">
+    <div class="container">
+        <p class="mb-0">
+            &copy; 2026 Women's Development Committee. All rights reserved.
+        </p>
+    </div>
 </footer>
-
-
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Custom JS -->
 <script src="../assets/js/script.js"></script>
+
 
 </body>
 </html>
